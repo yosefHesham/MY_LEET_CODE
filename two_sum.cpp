@@ -13,7 +13,7 @@ using namespace std;
         for(int i = 0; i < nums.size(); i++) {
         
         int search = target - nums[i];
-               if( indices.find(search) != indices.end() && i != indices[search])
+               if( indices.find(search) != indices.end() && i != indices[search]  )
                 return {i,indices[search]};
         }
         
