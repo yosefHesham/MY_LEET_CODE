@@ -6,6 +6,65 @@ using namespace std;
 
 
 
+int findFirst(vector<int> &nums, int target) {
+
+        int first = 0;
+        int last = nums.size() - 1;
+
+        while(first < last) {
+            int middle = first + (last - first) / 2;
+            if(nums[middle] < target) {
+
+                first = middle + 1;
+            }
+            else if(nums[middle] > target) {
+                last = middle - 1;
+            }
+            else {
+                last = middle;
+            }
+        }
+
+        if(first < 0 || last >= nums.size()) {
+            return -1;
+        }
+        return num[first] == target? first: -1;
+
+}
+
+int fintLast(vector<int>&nums, int target) {
+
+
+        int first = 0;
+        int last = nums.size() - 1;
+
+        while(first < last) {
+
+            int middle = first + ((last - first) / 2 )+ 1;
+
+            if(nums[middle] < target) {
+                first = middle + 1;
+            }
+            else if(nums[middle] > target) {
+                last = middle - 1;
+            }
+            else {
+
+                first = middle;
+            }
+        }
+        if(first < 0 || first >= nums.size()) {
+            return - 1;
+        }
+
+        return nums[first] == target? first: - 1;
+
+
+
+}
+
+
+
 vector<int> searchRange(vector<int>& nums, int target) {
         vector<int> result = {-1,-1};
         int left  = 0;
@@ -40,7 +99,7 @@ vector<int> searchRange(vector<int>& nums, int target) {
         
     }
     return result;
-}
+}   
 
 
     int main() {
